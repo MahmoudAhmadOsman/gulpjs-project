@@ -1,18 +1,15 @@
 .aside{
 	height: 600px;
 	display: -webkit-box;
-	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
 	-webkit-transition: all .6 ease-in-out;
-	-o-transition: all .6 ease-in-out;
 	transition: all .6 ease-in-out;
 }
 .footer{
 	height: 500px;
 	opacity: .8;
 	-webkit-transition: rotate(80deg);
-	-o-transition: rotate(80deg);
 	transition: rotate(80deg);
 
 }
@@ -23,7 +20,6 @@ body{
 .header{
 	height: 200px;
 	display: -webkit-box;
-	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
 }
