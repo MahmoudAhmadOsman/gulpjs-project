@@ -1,0 +1,6 @@
+.footer{
+	height: 500px;
+	opacity: .8;
+	transition: rotate(80deg);
+
+}

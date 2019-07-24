@@ -1,0 +1,5 @@
+.aside{
+	height: 600px;
+	display: flex;
+	transition: all .6 ease-in-out;
+}
