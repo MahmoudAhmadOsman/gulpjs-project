@@ -1,10 +1,9 @@
 //1st require the gulp
-var gulp = require('gulp'),
-
- concat = require('gulp-concat'),
-
- autoprefixer  = require('gulp-autoprefixer');
-
+const gulp = require('gulp'),
+	 concat = require('gulp-concat'),
+	 autoprefixer  = require('gulp-autoprefixer'),
+	 sass = require('gulp-sass'),
+	 uglify = require('gulp-uglify');
 
 //First taks starts here
 
@@ -23,7 +22,7 @@ var gulp = require('gulp'),
 //task one [etech-html]
 gulp.task('etech-html', function(){ 
 	
-
+	require('./server.js');
 	//run/test this on the command line like this gulp etech
 //console.log('Task test');
 
@@ -39,8 +38,8 @@ gulp.task('etech-html', function(){
   //return gulp.src(['project/index.html', 'project/style.css', 'project/about.html'])
 
 
-return gulp.src('project/*.html')
-
+//return gulp.src('project/*.html')
+return gulp.src('project/index.html')
 			//.pipe(etechMinify()) this how to  create new file
 			//.pipe(etechRename()) // or rename file
 
@@ -73,8 +72,6 @@ return gulp.src('project/*.html')
 
 
 
-
-
 //v6 - gulp-concat - plugin
 //1st - Install package with NPM and add it to your development dependencies:
 //npm install --save-dev gulp-concat
@@ -89,7 +86,7 @@ gulp.task('etech-css', function(){
 	return gulp.src('project/*.css') //all files that has .css extension
 	
 	//auto prefixer adds css prefixer such as [ms-web-kit-], [o-web-kit-], [moz-web-kit-]
-	.pipe(autoprefixer ('last 2 versions'))
+	.pipe(autoprefixer ('last 3 versions'))
 
 	.pipe(concat('main.css'))// the name of the file that you want for all your css files to be placed in
 
@@ -100,6 +97,17 @@ gulp.task('etech-css', function(){
 
 	
 });
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -134,8 +142,41 @@ gulp.task('etech-scripts', function(){
 
 
 
+/*
+=============================================
+
+			TASK THREE - [sass] TASK
+
+	        npm install node-sass gulp-sass --save-dev
+=============================================
+
+*/
 
 
+
+gulp.task('etech-sass', function(){
+	
+	return gulp.src('project/css/main.scss') //Get the scss file name
+   
+	//now use the sass function/method
+	//.pipe(sass({outputStyle: 'compressed'}))
+	.pipe(sass())
+
+	.pipe(uglify())
+	//auto prefixer - adds css prefixer such as [ms-web-kit-], [o-web-kit-], [moz-web-kit-]
+	.pipe(autoprefixer ('last 3 versions'))
+
+	//.pipe(concat('test.css')) // for testing purposes only
+
+	.pipe(concat('main.css'))// the name of the file that you want for all your css files to be placed in
+
+
+	//now after concatination, put those css files in this [dist/css] directory/folder
+	.pipe(gulp.dest('dist/css'))
+
+
+	
+});
 
 
 

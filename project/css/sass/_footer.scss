@@ -1,0 +1,19 @@
+$main_color: #004;
+
+
+.footer{
+
+
+	width: 100%;
+	height:250px;
+	display: flex;
+	background-color: $main_color;
+	color:#fff;
+	font-size:40px;
+	box-sizing: border-box;
+}
+
+
+.nav {
+	background-color: $main_color;
+}

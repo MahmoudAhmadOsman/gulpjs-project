@@ -1,7 +1,13 @@
 body{
 	box-sizing: border-box;
 }
-.header{
+
+
+header{
 	height: 200px;
 	display: flex;
+}
+main{
+	display: flex;
+	transition: all .2s ease-in;
 }
