@@ -3,6 +3,7 @@ const gulp = require('gulp'),
 	 concat = require('gulp-concat'),
 	 autoprefixer  = require('gulp-autoprefixer'),
 	 sass = require('gulp-sass'),
+	 sass = require('gulp-pug'),
 	 uglify = require('gulp-uglify');
 
 //First taks starts here
@@ -13,7 +14,7 @@ const gulp = require('gulp'),
 
 /*
 	=============================================
-				TASK ONE
+				** TASK ONE **
 	=============================================
 
 */
@@ -38,19 +39,37 @@ gulp.task('etech-html', function(){
   //return gulp.src(['project/index.html', 'project/style.css', 'project/about.html'])
 
 
-//return gulp.src('project/*.html')
-return gulp.src('project/index.html')
+return gulp.src('project/*.html') // All files that has [.html] extension
+
 			//.pipe(etechMinify()) this how to  create new file
 			//.pipe(etechRename()) // or rename file
 
+
 			//Now export these files using dest() built in function
 			// Where do you want to put your file now. This will put these files inside the [dist] folder
-
 			//.pipe(gulp.dest('dist/html')) - put files [html], that is inside the [dist] folder
 
 			.pipe(gulp.dest('dist/html'))
 
 });
+
+
+
+/*
+=============================================
+		** TASK TWO [pug] TASK **
+=============================================
+
+*/
+
+gulp.task('etech-pug', function() {
+	return gulp.src('project/index.pug')
+	  .pipe(gulp.dest('dist'))
+
+
+});
+
+
 
 
 
@@ -60,7 +79,7 @@ return gulp.src('project/index.html')
 /*
 =============================================
 
-			TASK TWO [CSS] TASK
+			** TASK TWO [CSS] TASK **
 
 			  [ AutoPrefixer For CSS3 Properties ]	
 
@@ -115,7 +134,7 @@ gulp.task('etech-css', function(){
 /*
 =============================================
 
-			TASK THREE - [JS] TASK
+		** TASK THREE - [JS] TASK **
 
 	        gulp-concat -> https://www.npmjs.com/package/gulp-concat
 =============================================
@@ -145,7 +164,7 @@ gulp.task('etech-scripts', function(){
 /*
 =============================================
 
-			TASK THREE - [sass] TASK
+		** TASK THREE - [sass] TASK **
 
 	        npm install node-sass gulp-sass --save-dev
 =============================================

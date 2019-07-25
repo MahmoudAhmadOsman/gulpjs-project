@@ -14,7 +14,7 @@
 
 var StaticServer = require('static-server');
 var server = new StaticServer({
-  rootPath: './dist/',// required, the root of the server file tree, [./dist/] is now my local/project root
+  rootPath: './dist/',  // required, the root of the server file tree, [./dist/] is now my local/project root
   port: 8000 // required, the port to listen [optional] you can name the port number any number you like
 
 });
