@@ -4,6 +4,7 @@ const gulp = require('gulp'),
 	 autoprefixer  = require('gulp-autoprefixer'),
 	 sass = require('gulp-sass'),
 	 sass = require('gulp-pug'),
+	 notify = require("gulp-notify"),
 	 uglify = require('gulp-uglify');
 
 //First taks starts here
@@ -50,6 +51,7 @@ return gulp.src('project/*.html') // All files that has [.html] extension
 			//.pipe(gulp.dest('dist/html')) - put files [html], that is inside the [dist] folder
 
 			.pipe(gulp.dest('dist/html'))
+			.pipe(notify("Task is Done!")); // You need Windows 8 o higher in order to use [gulp notify package]
 
 });
 
