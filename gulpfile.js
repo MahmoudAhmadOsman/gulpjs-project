@@ -5,6 +5,7 @@ const gulp = require('gulp'),
 	 sass = require('gulp-sass'),
 	 sass = require('gulp-pug'),
 	 notify = require("gulp-notify"),
+	 watch = require('gulp-watch'),
 	 uglify = require('gulp-uglify');
 
 //First taks starts here
@@ -24,9 +25,7 @@ const gulp = require('gulp'),
 //task one [etech-html]
 gulp.task('etech-html', function(){ 
 	
-	require('./server.js');
-	//run/test this on the command line like this gulp etech
-//console.log('Task test');
+
 
 //All tasks go here
 //this [below] meanst that it will take the [index.html] that is inside the project folde 
@@ -166,7 +165,7 @@ gulp.task('etech-scripts', function(){
 /*
 =============================================
 
-		** TASK THREE - [sass] TASK **
+		** TASK FOUR - [sass] TASK **
 
 	        npm install node-sass gulp-sass --save-dev
 =============================================
@@ -202,5 +201,25 @@ gulp.task('etech-sass', function(){
 
 
 
+/*
+=============================================
+
+		** TASK FIVE - [watch] TASK **
+
+	        npm install --save-dev gulp-watch
+
+=============================================
+
+*/
+
+gulp.task('watch', function(){
+
+	//syntax: gulp.watch('task_name', ['task1', 'task2', 'task3', 'etec.'])
 
 
+	require('./server.js');
+	//run/test this on the command line like this gulp etech
+//console.log('Task test');
+	gulp.watch('project/*.css', ['etech-css'])
+
+});
