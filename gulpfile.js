@@ -6,7 +6,8 @@ const gulp = require('gulp'),
 	 sass = require('gulp-pug'),
 	 notify = require("gulp-notify"),
 	 watch = require('gulp-watch'),
-	 uglify = require('gulp-uglify');
+	 uglify = require('gulp-uglify'),
+	 zip = require('gulp-zip');
 
 //First taks starts here
 
@@ -108,7 +109,8 @@ gulp.task('etech-css', function(){
 	//auto prefixer adds css prefixer such as [ms-web-kit-], [o-web-kit-], [moz-web-kit-]
 	.pipe(autoprefixer ('last 3 versions'))
 
-	.pipe(concat('main.css'))// the name of the file that you want for all your css files to be placed in
+	.pipe(concat('main.css'))// the name of the file that you want for all your css files to be placed in after the code is compiled
+	// this will help you to only call one css stylesheet [file] in your website 
 
 
 	//now after concatination, put those css files in this [dist/css] directory/folder
@@ -184,7 +186,7 @@ gulp.task('etech-sass', function(){
 
 	.pipe(uglify())
 	//auto prefixer - adds css prefixer such as [ms-web-kit-], [o-web-kit-], [moz-web-kit-]
-	.pipe(autoprefixer ('last 3 versions'))
+	.pipe(autoprefixer ('last 2 versions'))
 
 	//.pipe(concat('test.css')) // for testing purposes only
 
@@ -197,6 +199,48 @@ gulp.task('etech-sass', function(){
 
 	
 });
+
+
+
+
+
+//Compress Task
+/*
+=============================================
+
+		** TASK SIX - [gulp-zip] TASK **
+
+	        npm install --save-dev gulp-zip
+
+=============================================
+
+*/
+
+gulp.task('compress', function(){
+
+	//compress all the files that are inside the dist folder
+	return.gulp.src('dist/**/*.*')
+
+// the name of the [zip] file after all files were compressed
+	.pipe(zip('allfiles.zip')) 
+
+// Now, after the files were compress, were do you want to put them.
+	 .pipe(gulp.dest('.')) //[.] put the zip file somewhere next to gulpfile.js
+
+
+.pipe(notify("Files are compressed!")); //after the task is done, notify me
+
+});
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -222,4 +266,10 @@ gulp.task('watch', function(){
 //console.log('Task test');
 	gulp.watch('project/*.css', ['etech-css'])
 
+	gulp.watch('dist/**/*.*', ['compress']) // Also add inside the watch task
+
 });
+
+
+
+

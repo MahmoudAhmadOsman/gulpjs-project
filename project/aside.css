@@ -3,3 +3,7 @@
 	display: flex;
 	transition: all .6 ease-in-out;
 }
+
+.about-us{
+	color: #f33;
+}
