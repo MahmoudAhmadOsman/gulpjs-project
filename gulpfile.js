@@ -75,9 +75,6 @@ gulp.task('etech-pug', function() {
 
 
 
-
-
-
 /*
 =============================================
 
@@ -123,17 +120,6 @@ gulp.task('etech-css', function(){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 /*
 =============================================
 
@@ -158,7 +144,6 @@ gulp.task('etech-scripts', function(){
 
 	
 });
-
 
 
 
@@ -199,7 +184,6 @@ gulp.task('etech-sass', function(){
 
 	
 });
-
 
 
 
