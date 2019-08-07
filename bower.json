@@ -1,0 +1,23 @@
+{
+  "name": "gulp-project",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Mahmoud Osman"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/MahmoudAhmadOsman/gulp-js",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery": "^3.4.1",
+    "boostrap": "^4.3.1",
+    "fontawesome": "font-awesome#^5.10.1"
+  }
+}

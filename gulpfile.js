@@ -48,7 +48,8 @@ return gulp.src('project/*.html') // All files that has [.html] extension
 
 			//Now export these files using dest() built in function
 			// Where do you want to put your file now. This will put these files inside the [dist] folder
-			//.pipe(gulp.dest('dist/html')) - put files [html], that is inside the [dist] folder
+			
+			.pipe(gulp.dest('dist/html'))//- put files [html], that is inside the [dist] folder
 
 			.pipe(gulp.dest('dist/html'))
 			.pipe(notify("Task is Done!")); // You need Windows 8 o higher in order to use [gulp notify package]
@@ -58,18 +59,18 @@ return gulp.src('project/*.html') // All files that has [.html] extension
 
 
 /*
-=============================================
-		** TASK TWO [pug] TASK **
-=============================================
+	=============================================
+			** TASK TWO [pug] TASK **
+	=============================================
 
 */
 
-gulp.task('etech-pug', function() {
-	return gulp.src('project/index.pug')
-	  .pipe(gulp.dest('dist'))
+// gulp.task('etech-pug', function() {
+// 	return gulp.src('project/index.pug')
+// 	  .pipe(gulp.dest('dist'))
 
 
-});
+// });
 
 
 
@@ -104,7 +105,7 @@ gulp.task('etech-css', function(){
 	return gulp.src('project/*.css') //all files that has .css extension
 	
 	//auto prefixer adds css prefixer such as [ms-web-kit-], [o-web-kit-], [moz-web-kit-]
-	.pipe(autoprefixer ('last 3 versions'))
+	.pipe(autoprefixer ('last 2 versions'))
 
 	.pipe(concat('main.css'))// the name of the file that you want for all your css files to be placed in after the code is compiled
 	// this will help you to only call one css stylesheet [file] in your website 
