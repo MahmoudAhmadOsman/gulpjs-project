@@ -14,7 +14,7 @@ const gulp = require('gulp'),
 	 uglify = require('gulp-uglify'),
 	 zip = require('gulp-zip');
 
-//First taks starts here
+//First tass starts here
 
 //Syntax: gulp.task('taskName'), function(){ //code. goes here}
 
