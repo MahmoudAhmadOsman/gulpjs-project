@@ -2,6 +2,8 @@
 Gulp.js demo project
 
 
+```bash
+
 const gulp = require('gulp'),
 	 concat = require('gulp-concat'),
 	 autoprefixer  = require('gulp-autoprefixer'),
@@ -21,3 +23,5 @@ gulp.task('sass-files', function () {
 	.pipe(concat('main.css'))
 	.pipe(gulp.dest('dist/css'))
 });
+
+```
